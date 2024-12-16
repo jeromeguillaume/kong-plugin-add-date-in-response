@@ -9,16 +9,19 @@ See [Deploy Plugins](https://docs.konghq.com/gateway/latest/plugin-development/g
 2) Create a Route attached to the Service
 - path=`/httpbin`
 3) Add the `add-date-in-response` plugin to the Service
+- you can change the default HTTP Header name, called: `X-My-Date`
 4) Let's try it
 - Request:
 ```shell
 curl http://localhost:7000/httpbin/anything
 ```
-- Response:
-```json
+- Response with the expected `X-My-Date`:
+```
 HTTP/1.1 200 OK
 X-My-Date: Monday Mon Dec 16 16:02:45 2024
+```
 ...
+```json
 
 {
     "args": {},
