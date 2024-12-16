@@ -13,7 +13,7 @@ See [Deploy Plugins](https://docs.konghq.com/gateway/latest/plugin-development/g
 4) Let's try it
 - Request:
 ```shell
-curl http://localhost:7000/httpbin/anything
+curl http://localhost:8000/httpbin/anything
 ```
 - Response with the expected `X-My-Date`:
 ```
