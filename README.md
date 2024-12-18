@@ -35,7 +35,7 @@ X-My-Date: Monday Mon Dec 16 16:02:45 2024
 }
 ```
 ## How to use it with Kubernetes Ingress Controller
-See [kic](kic/) materiel for following steps
+See [kic](kic/) material for following steps
 1) Control Plane: Push the `schema` by using the Konnect API
 2) Data Plane: Create a Config Map for storing the `add-date-in-response` plugin
 3) Data Plane: Add the `add-date-in-response` plugin to the `values.yaml` HELM:
