@@ -35,4 +35,30 @@ X-My-Date: Monday Mon Dec 16 16:02:45 2024
 }
 ```
 ## How to use it with Kubernetes Ingress Controller
-See [kic](kic/)
+See [kic](kic/) materiel for followin steps
+1) Control Plane: Push the `schema` by using the Konnect API
+2) Data Plane: Create a Config Map for storing the `add-date-in-response` plugin
+3) Data Plane: Add the `add-date-in-response` plugin to the values.yaml HELM:
+```yaml
+gateway:
+  plugins:
+    configMaps:
+    - name: kong-plugin-add-date-in-response
+      pluginName: add-date-in-response
+```
+Deploy the KIC including the plugin:
+```shell
+helm -n kong upgrade kong kong/ingress -f ./values.yaml
+```
+4) Create a Kubernetes `KongPlugin`
+5) Add the `konghq.com/plugins: add-date-in-response` to your `Ingress` or `HTTPRoute` kinds
+```yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+ name: httpbin-route
+ namespace: app
+ annotations:
+   konghq.com/strip-path: 'true'
+   konghq.com/plugins: add-date-in-response
+```
