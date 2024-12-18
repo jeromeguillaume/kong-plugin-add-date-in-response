@@ -50,8 +50,8 @@ Deploy the KIC including the plugin:
 ```shell
 helm -n kong upgrade kong kong/ingress -f ./values.yaml
 ```
-4) Create a Kubernetes `KongPlugin`
-5) Add the `konghq.com/plugins: add-date-in-response` to your `Ingress` or `HTTPRoute` kinds
+4) Data Plane: Create a Kubernetes `KongPlugin`
+5) Data Plane: Add the `konghq.com/plugins: add-date-in-response` to your `Ingress` or `HTTPRoute` kinds
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
