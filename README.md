@@ -33,6 +33,6 @@ X-My-Date: Monday Mon Dec 16 16:02:45 2024
     },
     "url": "http://localhost/anything"
 }
-
+```
 ## How to use it with Kubernetes Ingress Controller
 See [kic](kic/)
