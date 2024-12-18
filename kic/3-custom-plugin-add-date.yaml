@@ -1,0 +1,8 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: add-date-in-response
+  namespace: app
+plugin: add-date-in-response
+config:
+  response_header_name: My-Custom-Date

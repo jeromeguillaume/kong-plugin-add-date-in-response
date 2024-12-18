@@ -3,7 +3,7 @@
 ## How to deploy it
 See [Deploy Plugins](https://docs.konghq.com/gateway/latest/plugin-development/get-started/deploy/) on docs.konghq.com
 
-## How to use it
+## How to use it with Self-managed Hybrid Kong Gateway
 1) Create a GW Service
 - Upstream URL=`http://httpbin.konghq.com`
 2) Create a Route attached to the Service
@@ -33,3 +33,6 @@ X-My-Date: Monday Mon Dec 16 16:02:45 2024
     },
     "url": "http://localhost/anything"
 }
+
+## How to use it with Kubernetes Ingress Controller
+See [kic](kic/)
